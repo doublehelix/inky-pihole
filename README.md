@@ -7,6 +7,11 @@ Display the **number of blocked requests, and filtered traffic**, from [Pi-Hole]
 
 <img src='https://raw.githubusercontent.com/doublehelix/inky-pihole/master/preview.jpg?v=1' width="400"/>
 
+LCARS Version:
+
+<img src='https://raw.githubusercontent.com/doublehelix/inky-pihole/master/preview_lcars.jpg?v=1' width="400"/>
+
+
 - Setup **Pi-Hole**, follow the [installation instructions](https://learn.adafruit.com/pi-hole-ad-blocker-with-pi-zero-w/install-pi-hole).
 - Setup **Inky pHAT**, follow the [installation instructions](https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-inky-phat).
 - Clone this repo on your [Raspberry Pi Zero W](https://www.raspberrypi.org/products/).
@@ -24,7 +29,7 @@ This allows you to mount your device with cable at the top instead of the bottom
   * This currently prevents the display from refreshing on python 3.10 / inky 1.6.2
 
 
-## Reload automatically every NN minutes
+## Reload automatically every 30 minutes
 
 Edit your `crontab` settings.
 
@@ -33,9 +38,12 @@ crontab -e
 ```
 
 Add the following line:
-
 ```
 */30 * * * * python /home/pi/inky-pihole/main.py
+```
+Or, for the LCARS version:
+```
+*/30 * * * * python /home/pi/inky-pihole/lcars.py
 ```
 where:
 *  `*/30`: is every 30 minutes.
@@ -46,5 +54,8 @@ where:
 Cheers.
 
 ## See also
+Signika Font:
+* https://fonts.google.com/specimen/Signika
+
 Remote debugging Python from Visual Studio Code:
 * https://www.linkedin.com/pulse/python-remote-debugging-visual-studio-code-raspberry-pi-mircea-dogaru/
