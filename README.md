@@ -11,7 +11,20 @@ Display the **number of blocked requests, and filtered traffic**, from [Pi-Hole]
 - Setup **Inky pHAT**, follow the [installation instructions](https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-inky-phat).
 - Clone this repo on your [Raspberry Pi Zero W](https://www.raspberrypi.org/products/).
 
-## Reload automatically every 30 minutes
+### Display Rotation
+
+*NB:* If you need to Rotate the image displayed on your eInk display, uncomment line 88
+```
+img = img.rotate(180)
+```
+This allows you to mount your device with cable at the top instead of the bottom.
+
+## Roadmap
+* CPU Temerature Display
+  * This currently prevents the display from refreshing on python 3.10 / inky 1.6.2
+
+
+## Reload automatically every NN minutes
 
 Edit your `crontab` settings.
 

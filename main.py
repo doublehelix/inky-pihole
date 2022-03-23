@@ -85,7 +85,7 @@ draw_text((10, 95), "@", domains, "domains", display.BLACK)
 # draw.text((10, 105), "core temp:", display.BLACK, smallfont)
 # draw_text((90,101), "core temp:", "{:.1f}".format(cputemp) + "°c", "", display.RED)
 
-img = img.rotate(180)
+# img = img.rotate(180)
 
 display.set_border(display.WHITE)
 display.set_image(img)
