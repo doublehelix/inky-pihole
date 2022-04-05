@@ -141,7 +141,7 @@ if (args.lcars):
     img = Image.open("./lcars_black_red.png")
 else:
     display.set_border(display.WHITE)
-    img = Image.open("./logo.png")
+    img = Image.open("./background.png")
 
 # Create canvas on the image we just loaded
 draw = ImageDraw.Draw(img)
