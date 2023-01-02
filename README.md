@@ -30,7 +30,15 @@ python ./inky-pihole/main.py
 ```
 
 ## Options
-All command line optins are optional and the default values when left out are detailed below.
+
+* `-t`, `--token`  
+  Pihole API Token (_Required_)  
+  e.g.: `--token "4e0a518a7e2cc8e8b0520b91c8f0156709167ce9265298add8fa45d1d933f99e"`  
+  Navigate to the settings admin page to retrieve your API token:  
+  http://pihole/admin/settings.php?tab=api  
+  and click the `Show API Token` button to view your API key.
+
+All other command line options are optional, and the default values when left out are detailed below.
 * `-a` , `--apihosts`  
   A comma separated list of your Pi-Hole host names.  
   e.g.: `--apihosts "192.168.1.10, 192.168.1.11"`  
@@ -80,11 +88,11 @@ crontab -e
 
 Add the following line:
 ```
-*/30 * * * * python /home/pi/inky-pihole/main.py
+*/30 * * * * python /home/pi/inky-pihole/main.py --token "4e0a518a7e2cc8e8b0520b91c8f0156709167ce9265298add8fa45d1d933f99e"
 ```
 Or, add some command line options:
 ```
-*/30 * * * * python /home/pi/inky-pihole/main.py --rotate --lcars --simple --apihosts "10.0.0.10,10.0.0.11" --tz "Australia/Melbourne"
+*/30 * * * * python /home/pi/inky-pihole/main.py --rotate --lcars --simple --apihosts "10.0.0.10,10.0.0.11" --tz "Australia/Melbourne" --token "4e0a518a7e2cc8e8b0520b91c8f0156709167ce9265298add8fa45d1d933f99e"
 ```
 
 30 minutes should be a non-obtrusive refresh time for most people. The display can flash quite a lot during updates, so refreshing more regularly is only recommended if you need closer monitoring.

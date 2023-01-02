@@ -19,6 +19,7 @@ parser.add_argument('-r', '--rotate', action='store_true', help='Rotate display 
 parser.add_argument('-s', '--simple', action='store_true', help='Simple Statistics Display')
 parser.add_argument('--lcars', action='store_true', help='Use LCARS style display')
 parser.add_argument('--tz', help='Timezone (default: UTC)')
+parser.add_argument('-t', '--token', required=True, help='API authentication token. See: http://pihole/admin/settings.php?tab=api [Show API Token] button')
 # Helpers
 parser.add_argument('--timezones', action='store_true', help='Show all available TimeZone values')
 
@@ -29,6 +30,10 @@ if (args.timezones):
     for tz in pytz.all_timezones:
         print(tz)
     exit()
+
+if (args.token is None)
+    print('API token is mandatory!')
+    exit();
 
 # Initialize Inky pHAT Display
 display = auto()
@@ -53,7 +58,8 @@ data = {'unique_clients': 0, 'domains_being_blocked': 0,
 # Get Pi-Hole API data
 def get_data(host, combine=False):
     try:
-        f = urlopen('http://' + host + '/admin/api.php')  # open API connection
+        url = 'http://' + host + '/admin/api.php?summaryRaw&auth=' + args.token
+        f = urlopen(url)  # open API connection
         json_data_string = f.read()                   # Read data
         f.close()                                     # close connection
 
