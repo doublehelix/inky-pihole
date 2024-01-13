@@ -31,7 +31,7 @@ if (args.timezones):
         print(tz)
     exit()
 
-if (args.token is None)
+if (args.token is None):
     print('API token is mandatory!')
     exit();
 
