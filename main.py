@@ -17,7 +17,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-a', '--apihosts', help='List of comma separated API host names')
 parser.add_argument('-r', '--rotate', action='store_true', help='Rotate display 180 deg')
 parser.add_argument('-s', '--simple', action='store_true', help='Simple Statistics Display')
-parser.add_argument('--lcars', action='store_true', help='Use LCARS style display')
+parser.add_argument('-l', '--lcars', action='store_true', help='Use LCARS style display')
 parser.add_argument('--tz', help='Timezone (default: UTC)')
 parser.add_argument('-t', '--token', required=True, help='API authentication token. See: http://pihole/admin/settings.php?tab=api [Show API Token] button')
 # Helpers
